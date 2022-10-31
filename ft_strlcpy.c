@@ -1,72 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 12:38:41 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/10/31 12:38:41 by totto-pi         ###   ########.fr       */
+/*   Created: 2022/10/31 12:38:15 by totto-pi          #+#    #+#             */
+/*   Updated: 2022/10/31 13:18:32 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+
+//The strlcpy() function copies up to size-1 characters from the NUL-terminated string src to dst, NUL-terminating the result.
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	const char*	s;
-	char*		d;
-	char*		temp;
-	size_t		i;
+	size_t	i;
+	char	temp;
 
-	if(!src & !dest)
+	if (!(size > 0) & (src[size] != '\0'))
 		return (0);
-	temp = (char *)malloc(sizeof(char)*n);
-	s = src;
-	d = dest;
 	i = 0;
-	while (i < n)
+	while (i < size)
 	{
-		*(temp + i) = *(s + i);
+		temp = src[i];
+		dst[i] = temp;
 		i++;
 	}
-	i = 0;
-	while (i < n)
-	{
-		*(d + i) = *(temp + i);
-		i++;
-	}
-	return (dest);
+	dst[i] = '\0';
+	return (size);
 }
-/*
-	int i;
-
-	i = -1;
-	if (dest > src)
-		while (n--)
-			(char *)dest = (char *)src;
-	else
-	{
-		while (i)
-		{
-			*((char *)dest + i) = *((char *)src + i);
-			i++;
-		}
-	}
-	return (dest);
-
-	*/
 
 int main()
 {
 	char frase[] = "Life is an amazing ride, even when it shits on your dreams.";
-	char dest[22] = "Ola bom Dia meninos!!";
+	char dest[22] = "Ola ";
 	printf("%s\n", frase );
-	ft_memmove(dest, frase, 5);
+	ft_strlcpy(dest, frase, 5);
 	printf("%s\n", dest );
 	return (0);
 }
