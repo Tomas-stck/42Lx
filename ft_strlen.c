@@ -6,12 +6,11 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:37:28 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/10/31 15:28:35 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:52:03 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 size_t ft_strlen(const char *s)
 {

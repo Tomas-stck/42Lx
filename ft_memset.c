@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:38:48 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/10/31 12:38:48 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:51:44 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,7 @@
 // n   ==> Number of bytes to be filled starting 
 //         VOID pointers can't be iterated, so we transform to "UsCHAR Pointer"
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {

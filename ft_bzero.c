@@ -6,13 +6,12 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:38:22 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/10/31 12:38:22 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:50:51 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

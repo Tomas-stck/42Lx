@@ -6,17 +6,24 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:33:15 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/10/31 16:51:17 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:51:51 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include "ft_strlen.c"
+#include "libft.h"
 
 //use `pkg-config --cflags --libs libbsd-overlay` after gcc instructions
 
+/**
+ * The function ft_strlcat() appends the null-terminated string src to the end of dst. It will append
+ * at most size - strlen(dst) - 1 bytes, NUL-terminating the result
+ * 
+ * @param dst This is the destination string.
+ * @param src The string to be appended.
+ * @param size the size of the destination buffer
+ * 
+ * @return The length of the string it tried to create in the buffer.
+ */
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
@@ -28,7 +35,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		return (0);
 	dlen = ft_strlen(dst);
 	i = 0;
-	while (i < size -1)
+	while (i < size - 1)
 		dst[dlen++] = src[i++];
 	dst[i] = 0;
 	return (i + slen - 1);
@@ -60,7 +67,7 @@ int main()
 	char frase[] = "Life is an amazing ride, even when it shits on your dreams.";
 	char dest[22] = "Ola ";
 	printf("%s\n", frase );
-	strlcat(dest, frase, 7);
+	ft_strlcat(dest, frase, 7);
 	printf("%s\n", dest );
 	return (0);
 }

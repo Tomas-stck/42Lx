@@ -6,15 +6,11 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:38:55 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/10/31 12:38:55 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:52:11 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-#include <stdio.h>
-#include <stdlib.h> 
-
+#include "libft.h"
 /*
 s: The string from which to create the substring.
 start: The start index of the substring in the string ’s’.
