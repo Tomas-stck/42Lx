@@ -1,44 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 12:38:37 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/01 15:51:32 by totto-pi         ###   ########.fr       */
+/*   Created: 2022/10/25 14:15:16 by totto-pi          #+#    #+#             */
+/*   Updated: 2022/11/01 18:18:12 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
-
-
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+// if TRUE return 1
+//if FALSE return 0
+int	ft_isalpha(int c)
 {
-	size_t		i;
-	const char*	s;
-	char*		d;
-
-	if(!src && !dest)
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		return (1);
+	else
 		return (0);
-	s = src;
-	d = dest;
-	i = 0;
-	while (i < n)
-	{
-		d[i] = s[i];
-		i++;
-	}
-	return (dest);
-}
-
-int main()
-{
-	char frase[] = "Life is an amazing ride, even when it shits on your dreams.";
-	char dest[10];
-	printf("%s\n", frase );
-	ft_memcpy(dest, frase, 9);
-	printf("%s", dest );
-	return (0);
 }

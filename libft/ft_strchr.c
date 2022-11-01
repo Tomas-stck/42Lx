@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 14:15:16 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/01 15:51:06 by totto-pi         ###   ########.fr       */
+/*   Created: 2022/11/01 16:19:58 by totto-pi          #+#    #+#             */
+/*   Updated: 2022/11/01 18:19:49 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-// if TRUE return 1
-//if FALSE return 0
-int	ft_isalpha(int c)
-{
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
-}
 
-int	main(void)
+char *ft_strchr(const char *s, int c)
 {
-	char	a = 'a';
+	size_t	i;
 
-	if (ft_isalpha(a))
-		printf("True");
-	else
-		printf("False");
-	return (0);
+	i = 0;
+	while ((s[i] != (unsigned char)c) && (s || *s))
+	{
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (s[i] == c && c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }

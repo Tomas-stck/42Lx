@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:38:15 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/01 15:51:58 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:19:57 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,4 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	dst[i] = 0;
 	return (size);
-}
-
-int main()
-{
-	char frase[] = "Life is an amazing ride, even when it shits on your dreams.";
-	char dest[22] = "Ola ";
-	printf("%s\n", frase );
-	ft_strlcpy(dest, frase, 7);
-	printf("%s\n", dest );
-	return (0);
 }

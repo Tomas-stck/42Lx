@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 12:38:22 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/01 15:50:51 by totto-pi         ###   ########.fr       */
+/*   Created: 2022/10/31 12:38:37 by totto-pi          #+#    #+#             */
+/*   Updated: 2022/11/01 18:18:21 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned char*		ptr;
 
-	ptr = s;
-	while (n-- > 0)
-		*ptr++ = '\0';
-}
-int main()
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char frase[] =" {1,2,3,4,5}";
-	printf("%s",frase);
-	ft_bzero(frase, 2);
-	printf("%s",frase);
-	return (0);
+	size_t		i;
+	const char*	s;
+	char*		d;
+
+	if(!src && !dest)
+		return (0);
+	s = src;
+	d = dest;
+	i = 0;
+	while (i < n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:38:48 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/01 15:51:44 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:17:46 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,4 @@ void	*ft_memset(void *s, int c, size_t n)
 		i++;
 	}
 	return (a);
-}
-
-int main()
-{
-	char frase[] = "Life is an amazing ride, even when it shits on your dreams.";	
-	printf("%s", ft_memset(frase + 8, '-', 2));
-	return (0);
 }

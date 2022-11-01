@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:38:55 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/01 15:52:11 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/01 18:20:08 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	str[i] = '\0';
 	return (str);
-}
-
-int main()
-{
-    char src[] = "Life is full of hope, and when it rains it poors";
- 
-    int start = 0;
-    int len = 4;
- 
-    char* dest = ft_substr(src, start, len);
- 
-    printf("%s\n", dest);
- 
-    return 0;
 }

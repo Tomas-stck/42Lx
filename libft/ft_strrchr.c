@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 15:56:51 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/01 15:57:10 by totto-pi         ###   ########.fr       */
+/*   Created: 2022/11/01 17:19:25 by totto-pi          #+#    #+#             */
+/*   Updated: 2022/11/01 18:20:03 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		c = c + 32;
-	return (c);
+	size_t	i;
+
+	i = ft_strlen(s);
+	while ((s[i] != (unsigned char)c) && (s || *s))
+	{
+		if (s[i] == c)
+			return ((char *)&s[i]);
+		i--;
+	}
+	if (s[i] == c || c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
