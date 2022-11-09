@@ -6,37 +6,52 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:48:01 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/09 18:05:59 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/09 18:27:30 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
-{
-	size_t	i;
-	size_t	j;
+// char	*ft_strnstr(const char *big, const char *little, size_t len)
+// {
+// 	size_t	l;
+// 	size_t	j;
 
-	i = 0;
-	if (little[i] == '\0')
-		return (*big);
-	while (big[i] && (i < len))
-	{
-		j = 0;
-		if (big[i] == little[j])
-		{
-			while (big[i] == little[j])
-			{
-				i++;
-				j++;
-				if ( little[j] == '\0')
-					return (*little);
-			}
+// 	l = ft_strlen(little);
+// 	if (*little == '\0')
+// 		return ((char *)big);
+// 	while (*big && l <= len)
+// 	{
+// 		j = 0;
+// 		if (*big == *little)
+// 		{
+// 			while (*big == *little)
+// 			{
+				
+// 				if ( *little == '\0')
+// 					return ((char *)little);
+// 			}
+// 		}
+// 		else
+// 			big++;
+// 	}
+// 	if ( l == len)
+// 		return (NULL);
+// }
 
-		}
-		else
-			i++;
-	}
-	if ( i == len)
-		return (NULL);
-}
+// char	*ft_strnstr(const char *big, const char *little, size_t len)
+// {
+// 	size_t	n;
+
+// 	if (*little == 0)
+// 		return ((char *)big);
+// 	n = ft_strlen(little);
+// 	while (*big && n <= len)
+// 	{
+// 		if (*big == *little && ft_strncmp(big, little, n) == 0)
+// 			return ((char *)big);
+// 		++big;
+// 		--len;
+// 	}
+// 	return (NULL);
+// }
