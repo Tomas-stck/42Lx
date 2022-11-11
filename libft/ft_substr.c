@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:38:55 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/01 18:20:08 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:40:26 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		start++;
 		i++;
 	}
-	str[i] = '\0';
+	str[len] = '\0';
 	return (str);
 }
