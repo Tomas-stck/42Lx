@@ -1,23 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 17:37:28 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/12 16:52:24 by totto-pi         ###   ########.fr       */
+/*   Created: 2022/11/12 17:34:53 by totto-pi          #+#    #+#             */
+/*   Updated: 2022/11/12 18:38:28 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strtrim(char const *s1, char const *set)
 {
+	char	*ptr;
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (s[i])
+	j = 0;
+	while (1)
+	{
+		j = 0;
+		while (set[j])
+		{
+			if (s1[i] == set[j])
+				i++;
+			j++;
+		}
 		i++;
-	return (i);
+	}
+	return (ptr);
 }
+
+/* i = 0;
+	while (i < ft_strlen(s1) + 1)
+	{
+		j = 0;
+		while (set[j])
+		{
+			if (s1[i] == set[j])
+				i++;
+			j++;
+		}
+		if (j == ft_strlen((char *)set))
+			ptr[i] = s1[i];
+		i++;
+	} */
