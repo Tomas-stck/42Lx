@@ -6,11 +6,9 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:38:48 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/01 18:17:46 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:02:04 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 // ptr ==> Starting address of memory to be filled
 // c   ==> Value to be filled

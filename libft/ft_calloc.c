@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:30:25 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/11 17:51:27 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:48:45 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	*ft_calloc(size_t nelem, size_t elsize)
 	size_t			i;
 
 	i = 0;
-	ptr = (unsigned char*)malloc(nelem * elsize);
+	ptr = (unsigned char *)malloc(nelem * elsize);
 	if (!ptr)
 		return (NULL);
 	while (i < nelem * elsize)
 		ptr[i++] = '\0';
-	return ((void*)ptr);
+	return ((void *)ptr);
 }

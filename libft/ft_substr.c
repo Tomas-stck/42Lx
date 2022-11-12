@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:38:55 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/11 18:40:26 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:44:40 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ NULL if the allocation fails
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char*	str;
+	char	*str;
 	int		i;
 
 	if (!s)
 		return (NULL);
-	str = (char*)malloc(1 + len * sizeof(char));
-	if(!str)
+	str = (char *)malloc(1 + len * sizeof(char));
+	if (!str)
 		return (NULL);
-	i=0;
-	while(start < len)
+	i = 0;
+	while (start < len)
 	{
 		str[i] = s[start];
 		start++;

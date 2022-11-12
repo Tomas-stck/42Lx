@@ -6,13 +6,13 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:19:58 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/01 18:19:49 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:02:19 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	size_t	i;
 

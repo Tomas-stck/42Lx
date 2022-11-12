@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 17:53:27 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/11 18:25:21 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/12 16:02:27 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char	*ft_strdup(const char *s)
 
 	i = 0;
 	len = ft_strlen(s);
-	new = (char*)malloc(len + 1);
+	new = (char *)malloc(len + 1);
 	if (!new)
 		return (NULL);
-	while (i<len)
+	while (i < len)
 	{
 		new[i] = s[i];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 16:04:39 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/11 17:32:10 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/12 15:58:20 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@ int	ft_atoi(const char *nptr)
 	res = 0;
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
 		i++;
-	if ((nptr[i] == '-' || nptr[i] == '+') && (nptr[i + 1] < '0' || nptr[i + 1] > '9'))
-		return (0);
-	if ((nptr[i] == '-' || nptr[i] == '+' ) && (nptr[i + 1] >= '0' && nptr[i + 1] <= '9'))
+	if ((nptr[i] == '-' || nptr[i] == '+' )
+		&& (nptr[i + 1] >= '0' && nptr[i + 1] <= '9'))
 	{
 		if (nptr[i] == '-')
 			signal = -1;
@@ -34,9 +33,7 @@ int	ft_atoi(const char *nptr)
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		res = res * 10 + nptr[i] - '0';
-		if (nptr[i + 1] < '0' || nptr[i + 1] > '9')
-			return (res * signal);
 		i++;
 	}
-	return (0);
+	return (res * signal);
 }
