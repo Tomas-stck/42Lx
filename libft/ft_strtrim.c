@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:34:53 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/12 18:38:28 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/12 18:59:02 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,24 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	size_t	j;
 
+	ptr = ft_strdup(s1);
 	i = 0;
 	j = 0;
-	while (1)
+	while (ptr[i])
 	{
 		j = 0;
 		while (set[j])
 		{
-			if (s1[i] == set[j])
+			if (ptr[i] == set[j])
 				i++;
 			j++;
+			if (set[j] == 0)
+				ptr[i] = s1[i];
 		}
 		i++;
 	}
+	ptr = ft_strdup(ptr);
+	if (!ptr)
+		return (NULL);
 	return (ptr);
 }
-
-/* i = 0;
-	while (i < ft_strlen(s1) + 1)
-	{
-		j = 0;
-		while (set[j])
-		{
-			if (s1[i] == set[j])
-				i++;
-			j++;
-		}
-		if (j == ft_strlen((char *)set))
-			ptr[i] = s1[i];
-		i++;
-	} */
