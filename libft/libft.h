@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 16:06:05 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/14 15:24:30 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/17 18:22:41 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <unistd.h>
 
 void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
@@ -44,5 +45,15 @@ void	*ft_calloc(size_t nelem, size_t elsize);
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *c, int fd);
+void	ft_putendl_fd(char *c, int fd);
+void	ft_putnbr_fd(int n, int fd);
+
+
 
 #endif
