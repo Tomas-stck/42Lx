@@ -12,7 +12,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 int	main()
 {
-	char a[] = "Bom dia";
+	char a[] = "a";
 	char b[] = "Bom diaa";
 	printf("%i\n",ft_strncmp(a, b, 99));
 	printf("%i\n",strncmp(a, b, 99));
