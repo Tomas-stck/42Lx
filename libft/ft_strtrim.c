@@ -6,13 +6,13 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 17:34:53 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/14 19:15:41 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:47:59 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	checkSet(char c, char const *set)
+int	check_set(char c, char const *set)
 {
 	int	i;
 
@@ -38,9 +38,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(s1));
 	len = ft_strlen(s1);
 	i = 0;
-	while (s1 && checkSet(s1[i], set))
+	while (s1 && check_set(s1[i], set))
 		i++;
-	while(len > 0 && checkSet(s1[len - 1], set))
+	while (len > 0 && check_set(s1[len - 1], set))
 		len--;
 	ptr = ft_substr(s1, i, len - i);
 	if (!ptr)

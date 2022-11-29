@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_sub.c                                     :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 15:03:58 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/29 15:04:00 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:48:34 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	word_count(char const *s, char c)
 	int	j;
 
 	j = 0;
-	while(*s)
+	while (*s)
 	{
-		if(*s != c && *s)
+		if (*s != c && *s)
 		{
 			while (*s != c && *s)
 				s++;
@@ -62,11 +62,8 @@ char	**ft_split(char const *s, char c)
 		{
 			w_len = word_size(s, c, i);
 			ptr[j] = ft_substr(s, i, w_len);
-			if (ptr[j])
-			{
+			if (ptr[j++])
 				i += w_len;
-				j++;
-			}
 			else
 				return (NULL);
 		}

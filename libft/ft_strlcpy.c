@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:38:15 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/12 16:02:50 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:33:18 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,22 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
-	int		len;
 
-	len = ft_strlen(src);
-	if (!(size > 0) && (src[len] != 0))
-		return (0);
 	i = 0;
-	while (i < size - 1)
+	if (size == 0)
+	{
+		while (src[i])
+			i++;
+		return (i);
+	}
+	while (i < size - 1 && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	dst[i] = 0;
-	return (size);
+	if (i < size)
+		dst[i] = '\0';
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }
