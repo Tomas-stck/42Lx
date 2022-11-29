@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 17:48:01 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/12 16:03:06 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/29 18:44:58 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	l;
 
 	l = ft_strlen(little);
-	if (*little == '\0' || len == 0)
+	if (*little == '\0')
 		return ((char *)big);
+	if (len == 0)
+		return (NULL);
 	while (*big && l <= len)
 	{
 		if (*big == *little && ft_strncmp(big, little, l) == 0)
