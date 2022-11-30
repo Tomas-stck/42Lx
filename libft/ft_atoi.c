@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 12:38:48 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/12 16:02:04 by totto-pi         ###   ########.fr       */
+/*   Created: 2022/11/11 16:04:39 by totto-pi          #+#    #+#             */
+/*   Updated: 2022/11/12 15:58:20 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// ptr ==> Starting address of memory to be filled
-// c   ==> Value to be filled
-// n   ==> Number of bytes to be filled starting 
-//         VOID pointers can't be iterated, so we transform to "UsCHAR Pointer"
-
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_atoi(const char *nptr)
 {
-	unsigned char	*a;
-	size_t			i;
+	size_t	i;
+	int		res;
+	int		signal;
 
+	signal = 1;
 	i = 0;
-	a = (unsigned char *) s;
-	while (i < n)
+	res = 0;
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == ' ')
+		i++;
+	if ((nptr[i] == '-' || nptr[i] == '+' )
+		&& (nptr[i + 1] >= '0' && nptr[i + 1] <= '9'))
 	{
-		a[i] = c;
+		if (nptr[i] == '-')
+			signal = -1;
 		i++;
 	}
-	return (a);
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		res = res * 10 + nptr[i] - '0';
+		i++;
+	}
+	return (res * signal);
 }

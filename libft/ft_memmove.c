@@ -6,7 +6,7 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 12:38:41 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/01 18:18:28 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/29 17:05:25 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,20 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	const char*	s;
-	char*		d;
-	char*		temp;
-	size_t		i;
+	const unsigned char	*s;
+	unsigned char		*d;
+	size_t				i;
 
-	if(!src & !dest)
+	if (!src & !dest)
 		return (0);
-	temp = (char *)malloc(sizeof(char)*n);
-	s = src;
-	d = dest;
 	i = 0;
-	while (i < n)
-	{
-		*(temp + i) = *(s + i);
-		i++;
-	}
-	i = 0;
-	while (i < n)
-	{
-		*(d + i) = *(temp + i);
-		i++;
-	}
+	s = (unsigned char *)src;
+	d = (unsigned char *)dest;
+	if (s < d)
+		while (++i <= n)
+			d[n - i] = s[n - i];
+	else
+		while (n-- > 0)
+			*(d++) = *(s++);
 	return (dest);
 }

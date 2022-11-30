@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 12:38:48 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/12 16:02:04 by totto-pi         ###   ########.fr       */
+/*   Created: 2022/11/29 19:14:18 by totto-pi          #+#    #+#             */
+/*   Updated: 2022/11/29 19:21:28 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// ptr ==> Starting address of memory to be filled
-// c   ==> Value to be filled
-// n   ==> Number of bytes to be filled starting 
-//         VOID pointers can't be iterated, so we transform to "UsCHAR Pointer"
-
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	unsigned char	*a;
-	size_t			i;
+	int	i;
 
 	i = 0;
-	a = (unsigned char *) s;
-	while (i < n)
+	while (lst)
 	{
-		a[i] = c;
+		lst = lst->next;
 		i++;
 	}
-	return (a);
+	return (i);
 }

@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 12:38:48 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/12 16:02:04 by totto-pi         ###   ########.fr       */
+/*   Created: 2022/11/09 17:48:01 by totto-pi          #+#    #+#             */
+/*   Updated: 2022/11/29 18:44:58 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// ptr ==> Starting address of memory to be filled
-// c   ==> Value to be filled
-// n   ==> Number of bytes to be filled starting 
-//         VOID pointers can't be iterated, so we transform to "UsCHAR Pointer"
-
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	unsigned char	*a;
-	size_t			i;
+	size_t	l;
 
-	i = 0;
-	a = (unsigned char *) s;
-	while (i < n)
+	l = ft_strlen(little);
+	if (*little == '\0')
+		return ((char *)big);
+	if (len == 0)
+		return (NULL);
+	while (*big && l <= len)
 	{
-		a[i] = c;
-		i++;
+		if (*big == *little && ft_strncmp(big, little, l) == 0)
+			return ((char *)big);
+		else
+		{
+			big++;
+			len--;
+		}
 	}
-	return (a);
+	return (NULL);
 }

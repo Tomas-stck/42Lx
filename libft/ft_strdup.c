@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 12:38:48 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/12 16:02:04 by totto-pi         ###   ########.fr       */
+/*   Created: 2022/11/11 17:53:27 by totto-pi          #+#    #+#             */
+/*   Updated: 2022/11/12 16:02:27 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// ptr ==> Starting address of memory to be filled
-// c   ==> Value to be filled
-// n   ==> Number of bytes to be filled starting 
-//         VOID pointers can't be iterated, so we transform to "UsCHAR Pointer"
-
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strdup(const char *s)
 {
-	unsigned char	*a;
-	size_t			i;
+	char	*new;
+	size_t	len;
+	size_t	i;
 
 	i = 0;
-	a = (unsigned char *) s;
-	while (i < n)
+	len = ft_strlen(s);
+	new = (char *)malloc(len + 1);
+	if (!new)
+		return (NULL);
+	while (i < len)
 	{
-		a[i] = c;
+		new[i] = s[i];
 		i++;
 	}
-	return (a);
+	new[len] = '\0';
+	return (new);
 }

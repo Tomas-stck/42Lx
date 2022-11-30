@@ -1,33 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 12:38:48 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/12 16:02:04 by totto-pi         ###   ########.fr       */
+/*   Created: 2022/11/12 16:04:52 by totto-pi          #+#    #+#             */
+/*   Updated: 2022/11/12 16:56:52 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// ptr ==> Starting address of memory to be filled
-// c   ==> Value to be filled
-// n   ==> Number of bytes to be filled starting 
-//         VOID pointers can't be iterated, so we transform to "UsCHAR Pointer"
-
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	unsigned char	*a;
-	size_t			i;
+	char	*ptr;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	a = (unsigned char *) s;
-	while (i < n)
+	j = 0;
+	if (!s1 && !s2)
+		return (NULL);
+	ptr = malloc(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1);
+	if (!ptr)
+		return (NULL);
+	while (s1[i])
 	{
-		a[i] = c;
+		ptr[i] = s1[i];
 		i++;
 	}
-	return (a);
+	while (s2[j])
+	{
+		ptr[i] = s2[j];
+		i++;
+		j++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
 }

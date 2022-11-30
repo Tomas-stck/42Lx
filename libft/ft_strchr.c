@@ -6,24 +6,22 @@
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:19:58 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/01 18:19:49 by totto-pi         ###   ########.fr       */
+/*   Updated: 2022/11/29 17:31:20 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
+	char	*str;
 
-	i = 0;
-	while ((s[i] != (unsigned char)c) && (s || *s))
+	str = (char *)s;
+	while (*str != (unsigned char)c)
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		i++;
+		if (*str == '\0')
+			return (NULL);
+		str++;
 	}
-	if (s[i] == c && c == '\0')
-		return ((char *)&s[i]);
-	return (NULL);
+	return (str);
 }

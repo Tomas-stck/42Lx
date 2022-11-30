@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: totto-pi <totto-pi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 12:38:48 by totto-pi          #+#    #+#             */
-/*   Updated: 2022/11/12 16:02:04 by totto-pi         ###   ########.fr       */
+/*   Created: 2022/11/11 17:30:25 by totto-pi          #+#    #+#             */
+/*   Updated: 2022/11/12 15:48:45 by totto-pi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// ptr ==> Starting address of memory to be filled
-// c   ==> Value to be filled
-// n   ==> Number of bytes to be filled starting 
-//         VOID pointers can't be iterated, so we transform to "UsCHAR Pointer"
-
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_calloc(size_t nelem, size_t elsize)
 {
-	unsigned char	*a;
+	unsigned char	*ptr;
 	size_t			i;
 
 	i = 0;
-	a = (unsigned char *) s;
-	while (i < n)
-	{
-		a[i] = c;
-		i++;
-	}
-	return (a);
+	ptr = (unsigned char *)malloc(nelem * elsize);
+	if (!ptr)
+		return (NULL);
+	while (i < nelem * elsize)
+		ptr[i++] = '\0';
+	return ((void *)ptr);
 }
